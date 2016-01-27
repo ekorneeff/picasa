@@ -4,6 +4,10 @@ require "picasa/presenter/exif"
 module Picasa
   module Presenter
     class Photo < Base
+      def author
+        @author ||= Author.new(parsed_body["author"][0])
+      end
+      
       # @return [Array<Presenter::Link>]
       def links
         @links ||= array_wrap(safe_retrieve(parsed_body, "link")).map { |link| Link.new(link) }
