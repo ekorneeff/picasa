@@ -30,6 +30,10 @@ module Picasa
       API::Album.new(credentials)
     end
 
+    def search
+      API::Search.new(credentials)
+    end
+
     # @return [API::Photo]
     #
     # @example

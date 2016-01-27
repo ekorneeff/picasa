@@ -11,6 +11,7 @@ require "picasa/api/album"
 require "picasa/api/comment"
 require "picasa/api/photo"
 require "picasa/api/tag"
+require "picasa/api/search"
 
 require "picasa/presenter/album"
 require "picasa/presenter/album_list"
