@@ -15,6 +15,18 @@ module Picasa
         @cover_photo_url = content && content[0]["url"]
       end
 
+      def content_medium
+        return @content_medium if defined?(@content_medium)
+        content = safe_retrieve(parsed_body, "media$content")
+        @content_medium = content && content.last['medium']
+      end
+
+      def src
+        return @src if defined?(@src)
+        content = safe_retrieve(parsed_body, "media$content")
+        @src = content && content.last["url"]
+      end
+
       # @return [String]
       def credit
         return @credit if defined?(@credit)
